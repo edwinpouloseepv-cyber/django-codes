@@ -1,0 +1,29 @@
+{% extends "store/base.html" %}
+
+
+{% block title %}
+Home Page
+{% endblock %}
+
+
+{% block content %}
+
+<h1>Welcome to My Store</h1>
+
+<p>{{ message }}</p>
+<p>You are using:</p>
+
+<p>{{ user_agent }}</p>
+{% if request.user.is_authenticated %}
+
+    <p>
+        Welcome, {{ request.user.username }}
+    </p>
+
+{% else %}
+
+    <p>Please Login</p>
+
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends "store/base.html" %}
+
+
+{% block title %}
+Products
+{% endblock %}
+
+
+{% block content %}
+
+<h1>Product List</h1>
+{% if q %}
+
+    <p>Showing results for: {{ q }}</p>
+
+{% else %}
+
+    <p>All Products</p>
+
+{% endif %}
+
+{% for product in products %}
+
+    <p>
+        {{ product.name }} - ₹{{ product.price }}
+    </p>
+    {% if product.price > 30000 %}
+
+        <p>Expensive Product</p>
+
+    {% endif %}
+
+{% endfor %}
+{% endblock %}
